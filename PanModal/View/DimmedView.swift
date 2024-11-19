@@ -11,7 +11,7 @@ import UIKit
 /**
  A dim view for use as an overlay over content you want dimmed.
  */
-public class DimmedView: UIView {
+public class DimmedView: ContainerView {
 
     /**
      Represents the possible states of the dimmed view.

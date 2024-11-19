@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,6 +21,7 @@
 		B9E8259F773D27BAA416DCDB /* PanModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58F1F9245FCF277E33A16FE /* PanModalPresentationController.swift */; };
 		BD2A2F384AA6A669BB094AFE /* DimmedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9359135D025D85DF75DE4F5 /* DimmedView.swift */; };
 		C5212562E96EB66723FA4AF5 /* PanModalNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAE1B81D3CE5D181BF9FEC5 /* PanModalNavigationController.swift */; };
+		D34C74042CEC2CF3006A7DA7 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34C74032CEC2CF3006A7DA7 /* ContainerView.swift */; };
 		DF004916923A0853BE2A6EF3 /* PanModalPresentable+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6D777902F927D45E55BD58 /* PanModalPresentable+UIViewController.swift */; };
 		EB726BFFEE56C0BF9E060581 /* PanModalPresentationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666A2C96EA5A339D2BF1AFD7 /* PanModalPresentationDelegate.swift */; };
 /* End PBXBuildFile section */
@@ -54,6 +55,7 @@
 		BCF005E45B676AD3F7B78FAD /* PanModalPresentable+LayoutHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PanModalPresentable+LayoutHelpers.swift"; sourceTree = "<group>"; };
 		BE33C1773BA187DC156A1573 /* PanModalPresentationAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanModalPresentationAnimator.swift; sourceTree = "<group>"; };
 		CEF747134DCC92CD1E6B1A1C /* PanModalPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanModalPresentable.swift; sourceTree = "<group>"; };
+		D34C74032CEC2CF3006A7DA7 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		D58F1F9245FCF277E33A16FE /* PanModalPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanModalPresentationController.swift; sourceTree = "<group>"; };
 		D9359135D025D85DF75DE4F5 /* DimmedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimmedView.swift; sourceTree = "<group>"; };
 		F99DE1EC61D2721C1D5BD49E /* PanModalKeyboardPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanModalKeyboardPresentable.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 			children = (
 				D9359135D025D85DF75DE4F5 /* DimmedView.swift */,
 				6182FE3A8D6D219CE0CDCCCF /* PanContainerView.swift */,
+				D34C74032CEC2CF3006A7DA7 /* ContainerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -226,8 +229,6 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 9999;
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = CCC9A83A9BFD2A0A523DC090 /* Build configuration list for PBXProject "PanModal" */;
 			compatibilityVersion = "Xcode 13.0";
@@ -271,6 +272,7 @@
 				564E41966241D7803EA68C20 /* PanModalKeyboardPresentable.swift in Sources */,
 				1D34D9B02EB1AC010D28A788 /* PanModalHeight.swift in Sources */,
 				7F6A9D4296C19BBC01898E49 /* PanModalPresentable+Defaults.swift in Sources */,
+				D34C74042CEC2CF3006A7DA7 /* ContainerView.swift in Sources */,
 				A5E91380A4091F2092B662CE /* PanModalPresentable+LayoutHelpers.swift in Sources */,
 				DF004916923A0853BE2A6EF3 /* PanModalPresentable+UIViewController.swift in Sources */,
 				4ADB47FF2175663ADCA39476 /* PanModalPresentable.swift in Sources */,
@@ -539,10 +541,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-					"$(inherited)",
-					SWIFT_PACKAGE,
-				);
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_SUPPRESS_WARNINGS = YES;
@@ -590,10 +589,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-					"$(inherited)",
-					SWIFT_PACKAGE,
-				);
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_SUPPRESS_WARNINGS = YES;
@@ -641,10 +637,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-					"$(inherited)",
-					SWIFT_PACKAGE,
-				);
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_SUPPRESS_WARNINGS = YES;
@@ -692,11 +685,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-					"$(inherited)",
-					DEBUG,
-					SWIFT_PACKAGE,
-				);
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG SWIFT_PACKAGE";
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SUPPRESS_WARNINGS = YES;

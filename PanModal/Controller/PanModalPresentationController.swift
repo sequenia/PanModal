@@ -23,6 +23,7 @@ import UIKit
  By conforming to the PanModalPresentable protocol & overriding values
  the presented view can define its layout configuration & presentation.
  */
+
 open class PanModalPresentationController: UIPresentationController {
 
     /**
@@ -115,11 +116,11 @@ open class PanModalPresentationController: UIPresentationController {
         } else {
             view = DimmedView()
         }
-        view.didTap = { [weak self] _ in
-            if self?.presentable?.allowsTapToDismiss == true {
-                self?.presentedViewController.dismiss(animated: true)
-            }
-        }
+         view.didTap = { [weak self] _ in
+             if self?.presentable?.allowsTapToDismiss == true {
+                 self?.presentedViewController.dismiss(animated: true)
+             }
+         }
         return view
     }()
 
@@ -248,6 +249,14 @@ open class PanModalPresentationController: UIPresentationController {
                 self.addRoundedCorners(to: self.presentedView)
             }
         })
+    }
+
+    private func getNotBottomSheetViewController(_ viewController: UIViewController?) -> UIViewController? {
+        if viewController is PanModalPresentable {
+            return self.getNotBottomSheetViewController(viewController?.presentingViewController)
+        }
+
+        return viewController
     }
 
 }
@@ -409,6 +418,15 @@ private extension PanModalPresentationController {
         backgroundView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor).isActive = true
         backgroundView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor).isActive = true
         backgroundView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor).isActive = true
+
+        if let presentingViewController =
+            self.getNotBottomSheetViewController(self.presentingViewController) {
+
+            self.backgroundView.passthroughViews = [
+                presentingViewController.view
+            ]
+        }
+
     }
 
     /**
@@ -440,6 +458,7 @@ private extension PanModalPresentationController {
         enableCustomInteractiveKeyboard = layoutPresentable.enableCustomInteractiveKeyboard
 
         containerView?.isUserInteractionEnabled = layoutPresentable.isUserInteractionEnabled
+        self.backgroundView.isInteractiveBottomController = layoutPresentable.isInteractiveBottomController
     }
 
     /**

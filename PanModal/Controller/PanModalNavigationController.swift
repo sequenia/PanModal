@@ -73,6 +73,10 @@ open class PanModalNavController: UINavigationController, PanModalPresentable {
         self.presentViewController.panModalBackgroundColor
     }
 
+    open var isInteractiveBottomController: Bool {
+        self.presentViewController.isInteractiveBottomController
+    }
+
     open var dragIndicatorBackgroundColor: UIColor {
         self.presentViewController.dragIndicatorBackgroundColor
     }

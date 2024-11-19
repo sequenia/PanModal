@@ -137,6 +137,10 @@ public protocol PanModalPresentable: AnyObject {
     var allowsDragToDismiss: Bool { get }
 
     /**
+     A flag enable user interactions on bottom controller
+    */
+    var isInteractiveBottomController: Bool { get }
+    /**
      A flag to determine if dismissal should be initiated when tapping on the dimmed background view.
 
      Default value is true.
